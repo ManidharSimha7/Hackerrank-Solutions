@@ -21,8 +21,13 @@ public class BeautifulTriplets {
 		HashMap<Integer, Integer> hmap = new HashMap<Integer, Integer>();
 		int n = in.nextInt();
 		int d = in.nextInt();
+		int tc;
 		for (int i = 0; i < n; i++) {
 			int value = in.nextInt();
+			 if(hmap.containsKey(value))
+			 {
+				 tc++;   //for repeated values,add this to count to include repeated
+			 }
 			hmap.put(value, value);
 		}
 		Set<Entry<Integer, Integer>> set = hmap.entrySet();
@@ -34,7 +39,7 @@ public class BeautifulTriplets {
 				count++;
 			}
 		}
-		System.out.println(count);
+		System.out.println(count+tc);
 		in.close();
 	}
 }
